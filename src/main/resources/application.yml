@@ -1,0 +1,9 @@
+server:
+  port: 8081
+  compression:
+    enabled: true
+
+logging:
+  level:
+    org.springframework.web: trace
+  path: ./logs
