@@ -7,35 +7,11 @@ logging:
   level:
     org.springframework.web: trace
   path: ./logs
+  
 spring:
-  datasource:
-    type: com.alibaba.druid.pool.DruidDataSource
-    druid:
-      username: root
-      password: 123
-      url: jdbc:mysql://localhost:3307/ms_employees
-      driver-class-name: com.mysql.cj.jdbc.Driver
-      initial-size: 3
-      min-idle: ${spring.datasource.druid.initial-size}
-      max-active: 200
-      filter:
-        config:
-          enabled: true
-      test-while-idle: true
-      time-between-connect-error-millis: 60000
-      min-evictable-idle-time-millis: 30000
-      validation-query: select 1
-      test-on-borrow: false
-      pool-prepared-statements: true
-      use-global-data-source-stat: false
-      connect-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=2000
-      time-between-log-stats-millis: 300000
-      max-pool-prepared-statement-per-connection-size: 10
-      stat-view-servlet:
-        enabled: true
-        url-pattern: '/druid/*'
-        login-username: admin
-        login-password: admin
+  profiles:
+    active: db
+
 
 
 
